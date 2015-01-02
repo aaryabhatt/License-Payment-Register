@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xml:lang="[% c.session.mlanguage_type %]" lang="[% c.session.mlanguage_type %]">
+
+[% PROCESS header.tt %]
+
+<body>
+<div class="container">
+	<div class="row text-left page-header">
+		
+					<h1> CASH REGISTER </hi> 
+					<small> Open Source Software </small>
+	</div>
+
+  
+	[% PROCESS menu.tt %]
+	
+	<div class="container-fluid">
+	<!-- Content Start -->
+
+	<div id="content" >
+	    			        [%# Status and error messages %]
+				        <span class="message">[% status_msg %]</span>
+				        <span class="error">[% error_msg %]</span>
+				        [%# This is where TT will stick all of your template's contents. -%]
+				        [% content %]
+					<!-- Content End -->
+	 </div><!-- end content -->
+   	 </div> <!-- end container fluid -->
+</div><!-- end bodyblock -->
+
+
+</body>
+
+</html>
+

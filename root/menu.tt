@@ -1,0 +1,78 @@
+[% IF backend_menu %]
+
+ <!-- Navigation -->
+
+
+<div class="row">
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Licenses <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Add A New License</a></li>
+                <li><a href="#">Edit License</a></li>
+                <li><a href="#">List All</a></li>
+            </ul>
+        </li>
+	<li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">License Category <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Add New</a></li>
+                <li><a href="#">Modify New</a></li>
+                <li><a href="#">List All</a></li>
+            </ul>
+        </li>
+
+	<li><a href="#">Make Payment</a></li>
+	
+	<li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Payment Report <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Daily Report</a></li>
+                <li><a href="#">Advanced Search</a></li>
+            </ul>
+        </li>
+ 
+
+        <li class="dropdown pull-right">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </li>
+    </ul>  
+<!--    <hr> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">Drafts</a></li>
+                <li><a href="#">Sent Items</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Trash</a></li>
+            </ul>
+        </li>
+        <li class="dropdown pull-right">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </li>
+    </ul> -->
+</div>
+<!-- #################              ###################### -->
+
+
+
+[% END %]
+
+

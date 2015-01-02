@@ -104,13 +104,12 @@ CREATE TABLE Address
 
 CREATE TABLE Cancel_Report
 (
-	Paymentid		int references Payment ON DELETE CASCADE ON UPDATE CASCADE,
+--	Paymentid		int references Payment ON DELETE CASCADE ON UPDATE CASCADE,
+	Paymentid		int references Payment,
 	Cancel_Date		timestamp,
-	Userid			text references AppUser ON DELETE CASCADE ON UPDATE CASCADE,
-	Description		text
+	Userid			text references AppUser,
+	Description		text,
+					PRIMARY KEY(Paymentid)
 );
 	 	
 	
-INSERT INTO roles (role, description) values ('admin', 'Admin Have All the Access');
-INSERT INTO roles (role, description) values ('account', 'to add enteries in license');
-INSERT INTO roles (role, description) values ('cashier', 'for cashier');

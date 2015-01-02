@@ -1,0 +1,91 @@
+
+<form name="userform" type="POST" action="[% c.uri_for('/user/modify') %]" >
+
+<fieldset id="form_budget"><legend>User Form</legend>
+
+[% IF userinfo.userid %]
+	<input type="hidden" name="userid" value="[% userinfo.userid %]">
+[% ELSE %]
+<div class="a"> 
+
+			<div class="l">	User ID
+			</div> 
+			<div class="r"><input NAME="userid" value="" >	
+			</div>
+</div>
+[% END %]
+	
+<div class="a"> 
+
+			<div class="l">	Name
+			</div> 
+			<div class="r"> <input NAME="name" value="[% userinfo.name %]" required >		
+			</div>
+</div>
+
+
+
+
+[% IF user_is_self %]
+<div class="a"> 
+			<div class="l">	Current Password
+			</div> 
+			<div class="r">
+								<input type='password' NAME="passwordc" >		
+			</div>
+</div>
+[% ELSE %]
+	<div class="a"> 
+		<div class="l">Active</div> 
+	<div class="r">
+				<Select name="active"> 
+					<option value="200" [% IF (userinfo.active==1) %]selected[% END %] >Active</option>
+					<option value="10"  [% IF (userinfo.active == 0) %]selected[% END %]>Un-Active</option>
+				</select>
+	</div>		
+
+[% END %]
+
+<div class="a"> 
+			<div class="l">	Password
+			</div> 
+			<div class="r">
+								<input type='password' NAME="passworda" >		
+			</div>
+</div>
+
+<div class="a"> 
+			<div class="l">	Password (again)
+			</div> 
+			<div class="r">
+								<input type='password' NAME="passwordb" >		
+			</div>
+</div>
+
+<div class="a"> 
+			<div class="l">	Details
+			</div> 
+			<div class="r">
+				<input type="text" name="details" value="[% userinfo.details %]">			
+			</div>
+</div>
+
+<div class="a"> 
+	<div class="l">
+	[% IF userinfo.userid %]
+              		<input type="submit"    name="Modify"    value="Modify" >          
+	[% ELSE %]
+	               <input type="submit"    name="Add"       value="Add" >
+	[% END %]
+	</div>
+	<div class="r">
+                  <input type="reset" value="Reset Form">
+	</div>                  
+</div>
+
+</fieldset>
+
+</form>
+
+
+

@@ -5,9 +5,20 @@ use warnings;
 
 use base 'Catalyst::View::TT';
 
+#__PACKAGE__->config(
+#    TEMPLATE_EXTENSION => '.tt',
+#    render_die => 1,
+#);
+
 __PACKAGE__->config(
     TEMPLATE_EXTENSION => '.tt',
     render_die => 1,
+
+    CATALYST_VAR => 'c',
+    TIMER        => 0,
+    ENCODING     => 'utf-8',
+    WRAPPER => 'wrapper.tt',
+
 );
 
 =head1 NAME

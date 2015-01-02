@@ -1,0 +1,52 @@
+ <head>
+
+
+
+    <meta charset="utf-8" />
+     <!-- Set to compatible with IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+<title>Welcome to Cash Register [% IF page.title  %]: [% page.title %][% END %]</title>
+
+<style type="text/css">
+
+@font-face
+{
+        font-family: "Open Sans";
+        src: url("[% c.uri_for('/static/fonts/OpenSans-Regular.ttf') %]");
+	font-style: Regular;
+}
+
+<!--@font-face
+{
+        font-family: "Open Sans";
+        src: url("[% c.uri_for('/static/fonts/OpenSans-Bold.ttf') %]");
+	font-style: Bold;
+}
+
+@font-face
+{
+        font-family: "Open Sans";
+        src: url("[% c.uri_for('/static/fonts/OpenSans-Light.ttf') %]");
+	font-style: Light;
+} -->
+
+
+
+	.bs-example{
+    	margin: 20px;
+    }
+    hr{
+        margin: 60px 0;
+    }
+
+</style>
+
+       <link rel="stylesheet" href="[% c.uri_for('/static/dist/css/bootstrap.min.css') %]" />
+        <link rel="stylesheet" href="[% c.uri_for('/static/dist/css/bootstrap-theme.min.css') %]" />
+        <link rel="stylesheet" href="[% c.uri_for('/static/dist/css/style.css') %]" />
+	<script src="[% c.uri_for('/static/dist/js/jquery.min.js') %]"></script>
+	<script src="[% c.uri_for('/static/dist/js/bootstrap.min.js') %]"></script>
+
+</head>

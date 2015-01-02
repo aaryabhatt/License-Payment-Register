@@ -1,0 +1,20 @@
+<div class="row">
+
+[% IF !(backend_menu) %]
+                [% PROCESS src/User/login.tt %]
+
+        [% END %]
+
+
+</div>
+
+ [% IF (backend_menu) %]
+
+
+<p> </p>
+
+              <p class="text-center"> ClusterDNS is like name is used to setup cluster of DNS servers. It is an opensource GPLv3 license Developed by Udyansh. It makes the same DNS files for each DNS server. In case of one server fails Rest of the server works as it is. You can contact us at www.udyansh.com</p>
+
+
+        [% END %]
+

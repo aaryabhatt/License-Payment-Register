@@ -1,0 +1,24 @@
+
+
+[% PROCESS src/xpagination.tt %]
+
+<table width='100%'>
+<thead>
+	<tr>	<th>UserID</th><th>Name</th> <th>Details</th>  
+			<th>Active</th> <th>Role</th> <th>Modify</th>
+	</tr>
+</thead>
+<tbody>	
+[% FOREACH a = users %]			 		
+	<tr>	<td>[% a.userid %]</td> <td>[% a.name %]</td>  <td>[% a.details %]</td> 
+			<td>[% a.active %]</td> <td>[% a.role %]</td> 
+					<td> <a href="[% c.uri_for('/user/modify/userid=')  %][% a.userid %]">Modify</a> </td>	
+	</tr>	
+[% END %]
+</tbody>	
+</table>
+
+
+
+[% PROCESS src/xpagination.tt %]
+
