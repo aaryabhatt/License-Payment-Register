@@ -5,6 +5,7 @@ use namespace::autoclean;
 BEGIN {extends 'Catalyst::Controller'; }
 
 use Class::Utils qw(makeparm selected_language unxss chomp_date trim);
+use Class::General qw(paginationx);
 
 =head1 NAME
 

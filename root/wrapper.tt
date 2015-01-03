@@ -15,8 +15,12 @@ xml:lang="[% c.session.mlanguage_type %]" lang="[% c.session.mlanguage_type %]">
 
   
 	[% PROCESS menu.tt %]
-	
-	<div class="container-fluid">
+ 	
+	<div class"row">	
+	<p> </p>
+	</br>
+	</div>
+	<div class="container-fluid"  >
 	<!-- Content Start -->
 
 	<div id="content" >
@@ -27,7 +31,7 @@ xml:lang="[% c.session.mlanguage_type %]" lang="[% c.session.mlanguage_type %]">
 				        [% content %]
 					<!-- Content End -->
 	 </div><!-- end content -->
-   	 </div> <!-- end container fluid -->
+	 </div><!-- end container fluid-->
 </div><!-- end bodyblock -->
 
 

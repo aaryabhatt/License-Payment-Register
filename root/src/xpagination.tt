@@ -1,0 +1,62 @@
+<!-- BEGINOF src/xpagination.tt  -->
+<p> </p>
+</br>
+
+[% #Page Vaiables
+	pagex.fp="First Page";
+	pagex.pp=" << Previous Page";
+	pagex.np="Next Page >>";
+	pagex.lp="Last Page";
+%]
+<P align="left">
+
+[% IF listpage.total > 0 %]
+Showing [% listpage.start %]-[% listpage.end %] of [% listpage.total %] [% 
+		listpage.listname %]
+[% END %]
+
+[% IF (listpage.page > 1) || ( listpage.total != listpage.end)  %]
+	&nbsp;||
+[% END %]
+
+	[% IF (listpage.searchstring) %]
+		[% IF (listpage.page > 1) %]
+			<a href="/[% listpage.nameclass %]/[% listpage.namefn %]/1/previous/[% 
+				listpage.searchstring %]">[% pagex.fp %]</a>
+			&nbsp;|
+			<a href="/[% listpage.nameclass %]/[% listpage.namefn %]/[% 
+				listpage.page %]/previous/[% listpage.searchstring %]"> [% pagex.pp %]</a>
+			&nbsp;|
+		[% END %]
+		[% IF ( listpage.total != listpage.end)  %]
+			&nbsp;
+			<a href="/[% listpage.nameclass %]/[% 
+				listpage.namefn %]/[% listpage.page %]/next/[% listpage.searchstring %]">[% pagex.np %]</a>
+			&nbsp;|
+			<a href="/[% listpage.nameclass %]/[% 
+				listpage.namefn %]/[% listpage.total %]/next/[% listpage.searchstring %]">[% pagex.lp %]</a>
+		[% END %]
+	[% ELSE %]
+		[% IF (listpage.page > 1) %]
+			<a href="/[% listpage.nameclass %]/[% listpage.namefn %]">[% pagex.fp %]</a>
+			&nbsp;|
+			<a href="/[% listpage.nameclass %]/[% listpage.namefn %]/[% 
+				listpage.page %]/previous/">[% pagex.pp %]</a>
+			&nbsp;|
+		[% END %]
+		[% IF ( listpage.total != listpage.end)  %]
+		&nbsp;
+		<a href="/[% listpage.nameclass %]/[% 
+			listpage.namefn %]/[% listpage.page %]/next/">[% pagex.np %]</a>
+		&nbsp;|
+		<a href="/[% listpage.nameclass %]/[% 
+			listpage.namefn %]/[% listpage.total %]">[% pagex.lp %]</a>
+		&nbsp;
+		[% END %]
+	[% END %] <br />
+	[% IF listpage.displaystring %] 
+		Results for <font color="Green" size="+1" style="text-align:right;">[% listpage.displaystring %] </font>
+	[% END %]
+</P>
+
+<!-- BEGINOF src/xpagination.tt  -->
