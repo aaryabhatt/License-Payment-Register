@@ -1,8 +1,11 @@
-
+<div class="bs-example">
+    <div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading">List of Users</div>
 
 [% PROCESS src/xpagination.tt %]
 
-<table width='100%'>
+<table class="table table-striped" >
 <thead>
 	<tr>	<th>UserID</th><th>Name</th> <th>Details</th>  
 			<th>Active</th> <th>Role</th> <th>Modify</th>
@@ -22,3 +25,6 @@
 
 [% PROCESS src/xpagination.tt %]
 
+</div>
+</div>
+</div>

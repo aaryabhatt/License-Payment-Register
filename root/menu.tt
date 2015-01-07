@@ -17,9 +17,9 @@
 	<li class="dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">License Category <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="#">Add New</a></li>
-                <li><a href="#">Modify New</a></li>
-                <li><a href="#">List All</a></li>
+                <li><a href="[% c.uri_for('/license_category/add') %]">Add New Category</a></li>
+                <li><a href="[% c.uri_for('/license_category/modify') %]">Modify New</a></li>
+                <li><a href="[% c.uri_for('/license_category/list') %]">List All</a></li>
             </ul>
         </li>
 

@@ -16,7 +16,9 @@ INSERT INTO privilege Values ('/logout/index', 'Logout');
 INSERT INTO privilege Values ('/user/list','Logs Index page');
 INSERT INTO privilege Values ('/user/modify','User Modify');
 INSERT INTO privilege Values ('/user/add','User Add');
-
+INSERT INTO privilege Values ('/license_category/add', 'Add License Category');
+INSERT INTO privilege Values ('/license_category/list', 'List License Categories');
+INSERT INTO privilege Values ('/license_category/modify', 'modify License Categories');
 
 -- Admin must have all thes access
 \! echo ---Insert Admin Access ---  
@@ -25,16 +27,25 @@ INSERT INTO access Values ('ADMIN','/logout/index');
 INSERT INTO access Values ('ADMIN','/user/add');
 INSERT INTO access Values ('ADMIN','/user/list');
 INSERT INTO access Values ('ADMIN','/user/modify');
+INSERT INTO access Values ('ADMIN','/license_category/add');
+INSERT INTO access Values ('ADMIN','/license_category/list');
+INSERT INTO access Values ('ADMIN','/license_category/modify');
 
 -- Account  must have read,write,list of License section only 
-\! echo ---Insert Manager Access ---  
+\! echo ---Insert Account Access ---  
 INSERT INTO access Values ('ACCOUNT','/index');
 INSERT INTO access Values ('ACCOUNT','/logout/index');
+INSERT INTO access Values ('ACCOUNT','/license_category/add');
+INSERT INTO access Values ('ACCOUNT','/license_category/list');
+INSERT INTO access Values ('ACCOUNT','/license_category/modify');
 
 -- Cashier  must have read,write,list of License section only 
-\! echo ---Insert Manager Access ---  
+\! echo ---Insert Cashier Access ---  
 INSERT INTO access Values ('CASHIER','/index');
 INSERT INTO access Values ('CASHIER','/logout/index');
+INSERT INTO access Values ('CASHIER','/license_category/add');
+INSERT INTO access Values ('CASHIER','/license_category/list');
+INSERT INTO access Values ('CASHIER','/license_category/modify');
 
 -- Guest must have only read permissions and comment permissions
 \! echo ---Insert  Guest Access ---  

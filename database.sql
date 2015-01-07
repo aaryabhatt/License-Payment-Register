@@ -48,7 +48,7 @@ CREATE TABLE AppUser
 CREATE TABLE License_Category
 (
 	Categoryid		SERIAL PRIMARY KEY,
-        Categoryname            text,
+        Categoryname            text unique not null,
 	CategoryDescription	text
 );
 
