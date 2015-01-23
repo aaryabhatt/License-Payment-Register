@@ -19,6 +19,9 @@ INSERT INTO privilege Values ('/user/add','User Add');
 INSERT INTO privilege Values ('/license_category/add', 'Add License Category');
 INSERT INTO privilege Values ('/license_category/list', 'List License Categories');
 INSERT INTO privilege Values ('/license_category/modify', 'modify License Categories');
+INSERT INTO privilege Values ('/license/add', 'Add License Category');
+INSERT INTO privilege Values ('/license/list', 'List all License ');
+INSERT INTO privilege Values ('/license/modify', 'Modify License ');
 
 -- Admin must have all thes access
 \! echo ---Insert Admin Access ---  
@@ -30,6 +33,9 @@ INSERT INTO access Values ('ADMIN','/user/modify');
 INSERT INTO access Values ('ADMIN','/license_category/add');
 INSERT INTO access Values ('ADMIN','/license_category/list');
 INSERT INTO access Values ('ADMIN','/license_category/modify');
+INSERT INTO access Values ('ADMIN','/license/add');
+INSERT INTO access Values ('ADMIN','/license/modify');
+INSERT INTO access Values ('ADMIN','/license/list');
 
 -- Account  must have read,write,list of License section only 
 \! echo ---Insert Account Access ---  
@@ -38,6 +44,9 @@ INSERT INTO access Values ('ACCOUNT','/logout/index');
 INSERT INTO access Values ('ACCOUNT','/license_category/add');
 INSERT INTO access Values ('ACCOUNT','/license_category/list');
 INSERT INTO access Values ('ACCOUNT','/license_category/modify');
+INSERT INTO access Values ('ACCOUNT','/license/add');
+INSERT INTO access Values ('ACCOUNT','/license/list');
+INSERT INTO access Values ('ACCOUNT','/license/modify');
 
 -- Cashier  must have read,write,list of License section only 
 \! echo ---Insert Cashier Access ---  
@@ -64,3 +73,4 @@ INSERT into appuser VALUES ('amit','Amit Bondwal', 'ME as a SU', 'amit', '2015-0
 update appuser set password='E5Heps6EgklcViMsGX7wEu1K9Kc' where userid='tirveni';
 update appuser set password='E5Heps6EgklcViMsGX7wEu1K9Kc' where userid='amit';
 
+--Alter license date table

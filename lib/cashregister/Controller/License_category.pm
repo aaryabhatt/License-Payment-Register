@@ -5,7 +5,7 @@ use Class::Utils qw(makeparm selected_language unxss  commify
 use Moose;
 use namespace::autoclean;
 use cashregister::Schema;
-
+use Data::Dumper;
 BEGIN {extends 'Catalyst::Controller'; }
 
 =head1 NAME
@@ -104,7 +104,8 @@ sub list :Path('/license_category/list')
                  " desired_page:$desired_page");
 
  my $rows_per_page = 10;
-  my @order_list = ('categoryname','categorydescription');
+#  my @order_list = ('categoryname','categorydescription');
+  my @order_list = ('categoryid');
 
   my %page_attribs;
   my $user_searchterm = $c->session->{'TripSearchTerm'};
@@ -117,7 +118,8 @@ sub list :Path('/license_category/list')
      order        => \@order_list,
      listname     => 'Categories',
      namefn       => 'list',
-     nameclass    => 'category',
+#     nameclass    => 'category',
+     nameclass    => 'license_category'
     );
 
  my $table_categories = $c->model('cashregister::LicenseCategory')->search() ;
@@ -165,62 +167,71 @@ sub modify :Path('/license_category/modify')
   $c->stash->{page} = {'title' => 'Modify Category' };
   $c->stash->{template} = 'src/Category/Add.tt';
   $c->log->debug("$categoryid, category id value");
-
   my ($lic_name, $lic_description);
-  # Category Operating
-  my $i_category = $c->user->get('categoryid');  
+#$c->log->debug ("references :"$c->request->$pars->{$keys});
+print Dumper($pars);
 
-#below line code it to insert variable values in database.
-                my $rs_lic =  $c->model('cashregister::LicenseCategory')->create
+  # this section is to fetch the information from database by categoryid, find always return a single row and search return a multiple rows.
+  # the name alpha and beta are the values name declared in template.
+  my $category_row = $c->model('cashregister::LicenseCategory')->find({categoryid => $categoryid,});
+  my ($category_desc, $categoryname);
+
+  my $c_name = $category_row->categoryname;	
+  my $c_desc = $category_row->categorydescription;
+
+  my $href;
+  $href->{categoryname} = $c_name;
+
+  $c->stash->{alpha} = $href;	
+ 		
+  $href->{categorydescription} = $c_desc;
+  $c->stash->{beta} = $href; 
+
+####below section will update the category and will submit it.
+#my ($lic_name, $lic_description);
+
+                $lic_name                = $pars->{lc_name}       ||$aparams->{lc_name}      ||undef;
+                $lic_description         = $pars->{lc_desc}       ||$aparams->{lc_desc}      ||undef;
+
+                #The below line will print all the variable values in enquiry form
+                $c->log->info("$lic_name, $lic_description : Print value of variables");
+
+        #below if loop will check the value of variable is empty or not.
+        if ($lic_name ne "" && $lic_description ne "" )
+                {
+
+                #The below line will print all the variable values in enquiry form
+                $c->log->info("$lic_name, $lic_description : Print value of variables");
+
+#                #below line code it to insert variable values in database.
+#                my $rs_lic =  $c->model('cashregister::LicenseCategory')->update_or_create
+#                        ({
+#			categoryid			 => $categoryid,
+#                        categoryname                     => $lic_name,
+#                        categorydescription              => $lic_description,
+#
+#                        }) ;
+
+my $modify_cat_row = $c->model('cashregister::LicenseCategory')->find({categoryid => $categoryid,});
+ 	 $modify_cat_row->update
                         ({
                         categoryname                     => $lic_name,
                         categorydescription              => $lic_description,
 
                         }) ;
+			
+#	$modify_cat_row->update;
 
 
-  my $rs_category = $c->model('cashregister::LicenseCategory')->find({categoryid => $categoryid,});
+#                        $c->log->info(" Update License Category :$rs_lic ");
+                        $c->log->info(" Update License Category :$modify_cat_row ");
+                        $c->res->redirect( "/license_category/list" );
+#                        return $rs_lic;
+                        return $modify_cat_row;
 
-  my ($lic_categoryname, $lic_categorydescription);
-  my $modify = $aparams->{'Modify Category'};
-
-# Get the Category Info
-  if ($i_category)
-	{
-		$lic_categoryname = $i_category->lic_categoryname;
-		$lic_categorydescription = $i_category->lic_categorydescription;
-	}
+                }
 
 
-
-
-
-#my $table_categories = $c->model('cashregister::LicenseCategory')->search() ;
-   #my $modify_categories = $c->model('cashregister::LicenseCategory')->find($categoryid)->update($c->request->params );
-   my $modify_categories = $c->model('cashregister::LicenseCategory')->find( $categoryid )->update( $c->request->$aparams );
-
-my @list;
-  while ( my $category = $modify_categories->next() )
-  {
-
-  push
-      (@list,
-       {
-        categoryid              => $modify_categories->categoryid,
-        categoryname            => $modify_categories->categoryname,
-        categorydescription     => $modify_categories->categorydescription,
-       }
-      );
-
-  }
-
-  $c->stash->{categories} = \@list;
-  $c->stash->{page} = {'title' => 'List of Categories' };
-  $c->stash->{template} = 'src/Category/list.tt';
-
-
-
-   #$c->res->redirect( "/license_category/list" );
 
 }
 =head1 AUTHOR

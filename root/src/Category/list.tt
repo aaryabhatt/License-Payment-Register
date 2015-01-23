@@ -7,12 +7,12 @@
 
 <table class="table table-striped" >
 <thead>
-        <tr>    <th>Category Name</th><th> Description</th>
+        <tr> <th>Category ID</th>   <th>Category Name</th><th> Description</th> <th>Modify</th>
         </tr>
 </thead>
 <tbody>
 [% FOREACH a = categories %]
-        <tr>  <td>[% a.categoryid %]  <td>[% a.categoryname %]</td> <td>[% a.categorydescription %]</td> 
+        <tr>  <td>[% a.categoryid %]</td>  <td>[% a.categoryname %]</td> <td>[% a.categorydescription %]</td> 
                                         <td> <a href="[% c.uri_for('/license_category/modify/')  %][% a.categoryid %]">Modify</a> </td>
         </tr>
 [% END %]

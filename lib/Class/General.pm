@@ -11,6 +11,7 @@ package Class::General;
 
 use List::Util qw(min max sum);
 use Class::Utils qw(makeparm selected_language unxss commify_series trim);
+use Class::General;
 
 #
 # Required for testing only
@@ -364,47 +365,47 @@ sub get_languages
 
 
 
-=head2 get_currency ($context [, $selected  ])
+=head2 get_category ($context [, $selected  ])
 
 Get Currencys from Table Currency
 
 =cut
 
-sub get_currency
+sub get_category
 {
   my $c                 = shift;
   my $in_selected       = shift;
 
-  my $f = "C/G/get_currency";
+  my $f = "C/G/get_category";
 
   $in_selected = unxss($in_selected);
   $c->log->debug("$f Start SELECTED:$in_selected");
   my @list;
 
-  my @order = ('currencycode');
-  my $currency_rs = $c->model('cashregister::Currency')->search
+  my @order = ('categoryname');
+  my $category_rs = $c->model('cashregister::license_category')->search
     ({},
      {order_by=> @order,}
     );
 
-  while ( my $currency_row = $currency_rs->next )
+  while ( my $category_row = $category_rs->next )
   {
 
-    my $currencycode    = $currency_row->currencycode;
-    my $currencyname	= $currency_row->currencyname;
+    my $categoryid    = $category_row->categoryid;
+    my $categoryname	= $category_row->categoryname;
 
     my $selected;
-    if ($currencycode eq $in_selected)
+    if ($categoryid eq $in_selected)
     {
-      $c->log->debug("$f Start IN:$in_selected,CODE:$currencycode");
+      $c->log->debug("$f Start IN:$in_selected,CODE:$categoryid");
       $selected='SELECTED';
     }
 
     push(@list,
          {
-          currencycode     => $currencycode,
-          currencyname      => $currencyname,
-	  selected	   => $selected,
+          categoryid     => $categoryid,
+          categoryname   => $categoryname,
+	  selected	 => $selected,
          }
         );
 

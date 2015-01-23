@@ -63,7 +63,7 @@ CREATE TABLE License
 	License_Type		text,
 	Validity_Start		date,
 	Validity_End		date,
-	Entry_Date		timestamp
+	Entry_Date		timestamp default now()
 					
 );
 
