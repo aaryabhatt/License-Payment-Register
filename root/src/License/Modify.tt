@@ -1,0 +1,157 @@
+<div class="bs-example">
+    <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Modify License</div>
+<p> </p>
+</br>
+
+
+ <form class="form-horizontal" role="form">
+
+<div class="col-md-6">
+    <div class="form-group">
+      <label class="control-label col-sm-4" >License Number</label>
+      <div class="col-sm-8">
+        <input type="text" name="li_number" value='[% lino.license_no %]' class="form-control" id="email" placeholder="License Number">
+      </div>
+   </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" > License Type</label>
+      <div class="col-sm-8">          
+      <input type="text" name="li_type" value='[% lity.license_type %]' class="form-control" id="pwd" placeholder="Type of License">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > License Holder Name</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_name" value='[% lhn.name %]' class="form-control" id="pwd" placeholder="License Holder Name">
+      </div>
+    </div>
+
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > S/o,D/o,Spouse Name</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_relative" value='[% sds.relativename %]' class="form-control" id="pwd" placeholder="Name">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > City / Village</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_city" value='[% lhucity.city %]' class="form-control" id="pwd" placeholder="City / Village Name">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Country</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_country" value='[% lhucountry.country %]' class="form-control" id="pwd" placeholder="Country">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Mobile Number</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_mobile" value='[% lhum.mobile %]' class="form-control" id="pwd" placeholder="Mobile Number">
+      </div>
+    </div>
+
+
+</div>
+
+<div class="col-md-6">
+
+<div class="form-group">
+      <label class="control-label col-sm-4" >Category Name</label>
+      <div class="col-sm-8">
+		
+		<select  class="selectpicker form-control"  name="li_category">
+                           <option value=''>Select Category</option>
+                [% FOREACH licn = list_category %]
+                                <option value='[% licn %]' [% IF licn == licn_exist.categoryname %]selected[% END %]>
+ [% licn %]  </option>
+                [% END %]
+
+                </select>
+
+
+
+      </div>
+   </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-4 datepicker-format " > Validity Starts</label>
+      <div class="col-sm-8">
+      <input type="date" name="li_startdate" value='[% vs_date.validity_start %]' class="form-control" id="pwd" placeholder="Validity Start Date">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Validity Ends</label>
+      <div class="col-sm-8">
+      <input type="date"   name="li_enddate" value='[% vs_end.validity_end %]' class="form-control" id="pwd" placeholder="Validity End Date">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Address</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_address" value='[% lhua.address %]' class="form-control" id="pwd" placeholder="Address">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > State</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_state" value='[% lhus.state %]' class="form-control" id="pwd" placeholder="State">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Contact Number</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_phone" value='[% lhup.phone %]' class="form-control" id="pwd" placeholder="Contact Number">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Email</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_email" value='[% lhue.email %]' class="form-control" id="pwd" placeholder="Email ID">
+      </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+    <div class="form-group">        
+      <div class="col-sm-offset-6 col-sm-6">
+        <button type="submit" onclick="clicked(event)" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </form>
+
+
+
+
+</div>
+</div>
+</div>
+
