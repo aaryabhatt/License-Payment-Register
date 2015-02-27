@@ -1,0 +1,15 @@
+[% SWITCH backend_payment_add %]
+
+[%   CASE '' %]
+
+[% PROCESS src/Payment/Search.tt %]
+
+[%   CASE '1' %]
+[% PROCESS src/Payment/vadd.tt %]
+
+[%   CASE 'print' %]
+[% PROCESS src/Payment/p_print.tt %]
+
+[% END %]
+
+

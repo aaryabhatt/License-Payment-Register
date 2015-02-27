@@ -1,0 +1,29 @@
+<div class="bs-example">
+    <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">All Licenses</div>
+
+[% PROCESS src/xpagination.tt %]
+<table class="table table-striped" >
+<thead>
+        <tr> <th>S. No.</th>   <th>License No.</th> <th> Payment Date</th><th> Amount in Rs.</th> <th>Received By</th> <th>Status</th>
+<th>Print</th> <th>Cancel</th>
+        </tr>
+</thead>
+<tbody>
+
+[% FOREACH a = payment %]
+        <tr>  <td>[% a.paymentid %]</td>  <td>[% a.license_no %]</td><td>[% a.payment_date %]</td> <td>[% a.amount %]</td> <td>[% a.receivedby %]</td> <td>[% a.payment_status %]</td> 
+<td> <a href="[% c.uri_for('/payment/print/')  %][% a.paymentid | trim %]" class="btn btn-info"> <span class="glyphicon glyphicon-print"></span></a> </td>                                       <td> <a href="[% c.uri_for('/payment/cancel/')  %][% a.paymentid %]">Cancel</a> </td>
+        </tr>
+[% END %]
+
+
+</tbody>
+</table>
+[% PROCESS src/xpagination.tt %]
+
+</div>
+</div>
+</div>
+

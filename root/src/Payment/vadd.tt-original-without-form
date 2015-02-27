@@ -1,0 +1,104 @@
+<div class="bs-example">
+    <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Make a Payment</div>
+<p> </p>
+</br>
+
+
+ <form class="form-horizontal" role="form">
+
+<div class="col-md-6">
+    <div class="form-group">
+      <label class="control-label col-sm-4" >License Number</label>
+      <div class="col-sm-8">
+        [% lino.license_no %] 
+      </div>
+   </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" > License Type</label>
+      <div class="col-sm-8">          
+     [% lity.license_type %]
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > License Holder Name</label>
+      <div class="col-sm-8">
+      [% lhn.name %]
+      </div>
+    </div>
+
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > S/o,D/o,Spouse Name</label>
+      <div class="col-sm-8">
+     [% sds.relativename %]
+      </div>
+    </div>
+
+
+
+</div>
+
+<div class="col-md-6">
+
+<div class="form-group">
+      <label class="control-label col-sm-4" >Category Name</label>
+      <div class="col-sm-8">
+      [% licn.categoryname %]
+      </div>
+   </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-4 datepicker-format " > Validity Starts</label>
+      <div class="col-sm-8">
+       [% vs_date.validity_start %]
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Validity Ends</label>
+      <div class="col-sm-8">
+      [% vs_end.validity_end %]
+      </div>
+    </div>
+
+
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Enter the Amount </label>
+      <div class="col-sm-8">
+      <input  type="number" min="0"  name="pl_amount" value='[% a_amount.amount %]' class="form-control" id="pwd" placeholder="Amount" required>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+    <div class="form-group">        
+      <div class="col-sm-offset-6 col-sm-6">
+        <button type="submit" onclick="clicked(event)" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </form>
+
+
+
+
+</div>
+</div>
+</div>
+

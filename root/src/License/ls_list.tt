@@ -1,0 +1,25 @@
+<div class="bs-example">
+    <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">All Licenses</div>
+
+<table class="table table-striped" >
+<thead>
+        <tr> <th>License ID</th>   <th>License No.</th> <th> Category</th><th> License Type</th> <th>Validity Start</th> <th>Validity End</th>
+ <th>Entry Date</th>
+        </tr>
+</thead>
+<tbody>
+
+        <tr>  <td>[% sli.licenseid %]</td>  <td>[% sln.license_no %]</td><td>[% slc.categoryname %]</td> <td>[% slt.license_type %]</td> <td>[% slvs.validity_start %]</td> <td>[% slve.validity_end %]</td>  <td>[% sle.entry_date %]</td>
+                                       <td> <a href="[% c.uri_for('/license/modify/')  %][% sln.license_no | uri | url | trim %]">Modify</a> </td>
+        </tr>
+
+
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+

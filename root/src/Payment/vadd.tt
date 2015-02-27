@@ -1,0 +1,99 @@
+<div class="bs-example">
+    <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Make a Payment</div>
+<p> </p>
+</br>
+
+
+ <form class="form-horizontal" role="form">
+
+<div class="col-md-6">
+    <div class="form-group">
+      <label class="control-label col-sm-4" >License Number</label>
+      <div class="col-sm-8">
+       <input type="text" name="li_number" value='[% lino.license_no %]' class="form-control" id="email" placeholder="License Number" readonly> 
+      </div>
+   </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" > License Type</label>
+      <div class="col-sm-8">          
+     <input type="text" name="li_type" value='[% lity.license_type %]' class="form-control" id="pwd" placeholder="Type of License" readonly>
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > License Holder Name</label>
+      <div class="col-sm-8">
+      <input type="text" name="lih_name" value='[% lhn.name %]' class="form-control" id="pwd" placeholder="License Holder Name" readonly>
+      </div>
+    </div>
+
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > S/o,D/o,Spouse Name</label>
+      <div class="col-sm-8">
+       <input type="text" name="lih_relative" value='[% sds.relativename %]' class="form-control" id="pwd" placeholder="Name" readonly>
+      </div>
+    </div>
+
+
+
+</div>
+
+<div class="col-md-6">
+
+<div class="form-group">
+      <label class="control-label col-sm-4" >Category Name</label>
+      <div class="col-sm-8">
+     <input type="text" name="lih_category" value='[% licn.categoryname %]' class="form-control" id="pwd" placeholder="Category Name" readonly>
+      </div>
+   </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-4 datepicker-format " > Validity Starts</label>
+      <div class="col-sm-8">
+      <input type="date" name="li_startdate" value='[% vs_date.validity_start %]' class="form-control" id="pwd" placeholder="Validity Start Date" readonly>
+      </div>
+    </div>
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Validity Ends</label>
+      <div class="col-sm-8">
+     <input type="date"   name="li_enddate" id="myDate" value='[% vs_end.validity_end %]' class="form-control"  placeholder="Validity End Date" readonly>
+      </div>
+    </div>
+
+
+
+<div class="form-group">
+      <label class="control-label col-sm-4" > Enter the Amount </label>
+      <div class="col-sm-8">
+      <input  type="number" min="0"  name="pl_amount" value='[% a_amount.amount %]' class="form-control" id="pwd" placeholder="Amount" required>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+    <div class="form-group">        
+      <div class="col-sm-offset-6 col-sm-6">
+        <button type="submit" onclick="clicked(event)" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+
+
+
+
+
+  </form>
+
+</div>
+</div>
+</div>
+

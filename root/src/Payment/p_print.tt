@@ -1,0 +1,55 @@
+<!--<div class="bs-example"> -->
+<div>
+   
+<div class="row">
+        <div class="col-xs-2">
+        </div>
+
+<div class="col-xs-8">
+ <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Payment Receipt</div>
+</br>
+<div id="printableArea">
+<div class="row">
+<center><h2> Payment Receipt </h2></center>
+<center><p> Welcome to License Payment </p></center>
+</div>
+
+<div class="row">
+        <div class="col-xs-6" style="text-align:right">
+License Number : </br>
+License Category :  </br>
+License Type : </br>
+License Holder Name :  </br>
+S/o, W/o, Spause Name :  </br>
+Validity Start : </br>
+Validity End : </br>
+License Fees : </br>
+Payment Received By : </br>
+Date : </br> 
+</div>
+
+<div class="col-xs-6">
+[% pln.license_no %]</br>
+[% pltc.categoryname %]</br>
+[% plt.license_type %]</br>
+[% plhn.name%]</br>
+[% plhr.relativename %]</br>
+[% start_d.validity_start %]</br>
+[% end_d.validity_end %]</br>
+[% lfa.amount %]</br>
+[% prb.receivedby %]</br>
+[% p_date.payment_date %]
+<div>
+</div> <!-- rows ends here -->
+
+
+</div>
+</div>
+</div>
+<div class="col-xs-2">
+</div>
+
+<input type="button"  class="btn btn-info" onclick="printDiv('printableArea')" value="Print" />
+</div>

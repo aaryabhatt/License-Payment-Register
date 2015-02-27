@@ -1,0 +1,27 @@
+<div class="bs-example">
+    <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">All Cancelled Payments</div>
+
+[% PROCESS src/xpagination.tt %]
+<table class="table table-striped" >
+<thead>
+        <tr> <th>Payment ID</th>   <th>License No.</th> <th> Date of Cancelation</th><th> Canceled by</th> <th>Reason of Cancel</th> 
+         </tr>
+</thead>
+<tbody>
+
+[% FOREACH a = cancel_payment %]
+        <tr>  <td>[% a.paymentid %]</td>  <td>[% a.license_no %]</td><td>[% a.cancel_date %]</td> <td>[% a.userid %]</td> <td>[% a.description %]</td> 
+        </tr>
+[% END %]
+
+
+</tbody>
+</table>
+[% PROCESS src/xpagination.tt %]
+
+</div>
+</div>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="row">
+
+[% IF !(backend_payment_add) %]
+                [% PROCESS src/Payment/Search.tt %]
+
+        [% END %]
+
+
+</div>
+
+ [% IF (backend_payment_add) %]
+
+	[% PROCESS src/Payment/vadd.tt %]
+	
+[% END %]
+
+

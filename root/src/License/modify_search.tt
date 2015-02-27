@@ -1,0 +1,17 @@
+<div class="row">
+
+[% IF !(backend_license) %]
+                [% PROCESS src/License/Search.tt %]
+
+        [% END %]
+
+
+</div>
+
+ [% IF (backend_license) %]
+
+	[% PROCESS src/License/ls_list.tt %]
+	
+[% END %]
+
+
