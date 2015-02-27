@@ -1,1 +1,22 @@
+License Payment Register is a web application to record the payments received of licenses based on license categories.
+In this you can add and modify license categories. 
+
+It contains three roles, one is Account which will add/modify the User license informations and can add/modify new category.
+
+Second role is Cashier, which is to receive payments, as referenced by account users.
+Cashier have payment recipt access and he can cancel the payment received with a reason to cancel.
+
+Third role is admin, who can do all these above works, and list and create users.
+
+By default admin username is amit and password is eloor.
+
+It is perl catalyst based web application, uses postgres as database.
+You need to install perl catalyst package and modules used in application.
+You will get to know about missing modules when you will try to run the application.
+You can use cpan to install dependencies modules.
+
+Create a postgres database cash, create databse user cash with password cash, and give all access to user on database cash.
+
+import the database.sql and  Support/access.sql in database. 
+
 Run script/cashregister_server.pl to test the application.
