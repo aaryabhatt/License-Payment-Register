@@ -48,5 +48,6 @@
         <link rel="stylesheet" href="[% c.uri_for('/static/dist/css/style.css') %]" />
 	<script src="[% c.uri_for('/static/dist/js/jquery.min.js') %]"></script>
 	<script src="[% c.uri_for('/static/dist/js/bootstrap.min.js') %]"></script>
+	<script src="[% c.uri_for('/static/dist/js/custom.js') %]"></script>
 
 </head>

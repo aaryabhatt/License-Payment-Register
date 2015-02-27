@@ -72,7 +72,7 @@ CREATE TABLE Payment
 	Paymentid		SERIAL,
 	License_no		text references License ON DELETE CASCADE ON UPDATE CASCADE,
 	Amount			text,
-	Payment_Date		timestamp,
+	Payment_Date		timestamp default now(),
 	Payment_status		text,
 	Receivedby		text,
 					PRIMARY KEY(Paymentid)
@@ -104,9 +104,10 @@ CREATE TABLE Address
 
 CREATE TABLE Cancel_Report
 (
---	Paymentid		int references Payment ON DELETE CASCADE ON UPDATE CASCADE,
-	Paymentid		int references Payment,
-	Cancel_Date		timestamp,
+	Paymentid		int references Payment ON DELETE CASCADE ON UPDATE CASCADE,
+--	Paymentid		int references Payment,
+	License_no              text references License ON DELETE CASCADE ON UPDATE CASCADE,
+	Cancel_Date		timestamp default now(),
 	Userid			text references AppUser,
 	Description		text,
 					PRIMARY KEY(Paymentid)

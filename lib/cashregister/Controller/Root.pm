@@ -100,11 +100,23 @@ else
   $c->log->debug("$m Role: $user_role ..");
 
 ##Handle Backend Admin Menu
-  if($user_role =~ 'ADMIN' || $user_role =~ 'ACCOUNT'
-    || $user_role =~ 'CASHIER'  )
+  if($user_role =~ 'ADMIN' )
   {
-    $c->stash->{backend_menu} = 1;
+    $c->stash->{backend_menu} = 'admin';
   }
+  
+  elsif ($user_role =~ 'ACCOUNT')
+	{
+    $c->stash->{backend_menu} = 'account';
+	  }
+
+  elsif ($user_role =~ 'CASHIER')
+        {
+    $c->stash->{backend_menu} = 'cashier';
+          }
+
+
+
 
   ##Have to check for Admin role also
   $c->log->debug("$m , $i_login,  $user_role");

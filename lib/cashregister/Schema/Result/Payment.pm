@@ -44,7 +44,9 @@ __PACKAGE__->table("payment");
 =head2 payment_date
 
   data_type: 'timestamp'
+  default_value: current_timestamp
   is_nullable: 1
+  original: {default_value => \"now()"}
 
 =head2 payment_status
 
@@ -71,7 +73,12 @@ __PACKAGE__->add_columns(
   "amount",
   { data_type => "text", is_nullable => 1 },
   "payment_date",
-  { data_type => "timestamp", is_nullable => 1 },
+  {
+    data_type     => "timestamp",
+    default_value => \"current_timestamp",
+    is_nullable   => 1,
+    original      => { default_value => \"now()" },
+  },
   "payment_status",
   { data_type => "text", is_nullable => 1 },
   "receivedby",
@@ -117,8 +124,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07010 @ 2014-12-31 17:06:43
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:RyqI8EtNkwiD4/uBLxi9nQ
+# Created by DBIx::Class::Schema::Loader v0.07010 @ 2015-01-30 12:48:37
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:XMJnuG+WLsv/yeRMxQtuhA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

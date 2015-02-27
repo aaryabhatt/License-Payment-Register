@@ -22,6 +22,12 @@ INSERT INTO privilege Values ('/license_category/modify', 'modify License Catego
 INSERT INTO privilege Values ('/license/add', 'Add License Category');
 INSERT INTO privilege Values ('/license/list', 'List all License ');
 INSERT INTO privilege Values ('/license/modify', 'Modify License ');
+INSERT INTO privilege Values ('/payment/add', 'Make a new License payment');
+INSERT INTO privilege Values ('/payment/list', 'list all the payment ');
+INSERT INTO privilege Values ('/payment/cancel', 'cancel payment ');
+INSERT INTO privilege Values ('/payment/cancel_list', 'cancel payment ');
+INSERT INTO privilege Values ('/payment/print', 'print payment receipt');
+INSERT INTO privilege Values ('/license/search', 'Search a License');
 
 -- Admin must have all thes access
 \! echo ---Insert Admin Access ---  
@@ -36,6 +42,12 @@ INSERT INTO access Values ('ADMIN','/license_category/modify');
 INSERT INTO access Values ('ADMIN','/license/add');
 INSERT INTO access Values ('ADMIN','/license/modify');
 INSERT INTO access Values ('ADMIN','/license/list');
+INSERT INTO access Values ('ADMIN','/payment/add');
+INSERT INTO access Values ('ADMIN','/payment/list');
+INSERT INTO access Values ('ADMIN','/payment/cancel');
+INSERT INTO access Values ('ADMIN','/payment/cancel_list');
+INSERT INTO access Values ('ADMIN','/payment/print');
+INSERT INTO access Values ('ADMIN','/license/search');
 
 -- Account  must have read,write,list of License section only 
 \! echo ---Insert Account Access ---  
@@ -47,6 +59,7 @@ INSERT INTO access Values ('ACCOUNT','/license_category/modify');
 INSERT INTO access Values ('ACCOUNT','/license/add');
 INSERT INTO access Values ('ACCOUNT','/license/list');
 INSERT INTO access Values ('ACCOUNT','/license/modify');
+INSERT INTO access Values ('ACCOUNT','/license/search');
 
 -- Cashier  must have read,write,list of License section only 
 \! echo ---Insert Cashier Access ---  
@@ -55,6 +68,12 @@ INSERT INTO access Values ('CASHIER','/logout/index');
 INSERT INTO access Values ('CASHIER','/license_category/add');
 INSERT INTO access Values ('CASHIER','/license_category/list');
 INSERT INTO access Values ('CASHIER','/license_category/modify');
+INSERT INTO access Values ('CASHIER','/payment/add');
+INSERT INTO access Values ('CASHIER','/payment/list');
+INSERT INTO access Values ('CASHIER','/payment/cancel');
+INSERT INTO access Values ('CASHIER','/payment/cancel_list');
+INSERT INTO access Values ('CASHIER','/payment/print');
+
 
 -- Guest must have only read permissions and comment permissions
 \! echo ---Insert  Guest Access ---  

@@ -33,7 +33,7 @@ __PACKAGE__->table("license_category");
 =head2 categoryname
 
   data_type: 'text'
-  is_nullable: 1
+  is_nullable: 0
 
 =head2 categorydescription
 
@@ -51,11 +51,12 @@ __PACKAGE__->add_columns(
     sequence          => "license_category_categoryid_seq",
   },
   "categoryname",
-  { data_type => "text", is_nullable => 1 },
+  { data_type => "text", is_nullable => 0 },
   "categorydescription",
   { data_type => "text", is_nullable => 1 },
 );
 __PACKAGE__->set_primary_key("categoryid");
+__PACKAGE__->add_unique_constraint("license_category_categoryname_key", ["categoryname"]);
 
 =head1 RELATIONS
 
@@ -75,8 +76,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07010 @ 2014-12-31 17:02:07
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:orZg7qeXP4dl3UKCaowM9Q
+# Created by DBIx::Class::Schema::Loader v0.07010 @ 2015-01-30 12:48:37
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:4uuaqGjDLDB2QNjx1BkYQw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

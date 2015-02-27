@@ -9,7 +9,7 @@ xml:lang="[% c.session.mlanguage_type %]" lang="[% c.session.mlanguage_type %]">
 <div class="container">
 	<div class="row text-left page-header">
 		
-					<h1> CASH REGISTER </hi> 
+					<h1> License Payment Register </hi> 
 					<small> Open Source Software </small>
 	</div>
 

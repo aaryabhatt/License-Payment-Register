@@ -59,7 +59,9 @@ __PACKAGE__->table("license");
 =head2 entry_date
 
   data_type: 'timestamp'
+  default_value: current_timestamp
   is_nullable: 1
+  original: {default_value => \"now()"}
 
 =cut
 
@@ -82,7 +84,12 @@ __PACKAGE__->add_columns(
   "validity_end",
   { data_type => "date", is_nullable => 1 },
   "entry_date",
-  { data_type => "timestamp", is_nullable => 1 },
+  {
+    data_type     => "timestamp",
+    default_value => \"current_timestamp",
+    is_nullable   => 1,
+    original      => { default_value => \"now()" },
+  },
 );
 __PACKAGE__->set_primary_key("license_no");
 
@@ -99,6 +106,21 @@ Related object: L<cashregister::Schema::Result::Address>
 __PACKAGE__->might_have(
   "address",
   "cashregister::Schema::Result::Address",
+  { "foreign.license_no" => "self.license_no" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 cancel_reports
+
+Type: has_many
+
+Related object: L<cashregister::Schema::Result::CancelReport>
+
+=cut
+
+__PACKAGE__->has_many(
+  "cancel_reports",
+  "cashregister::Schema::Result::CancelReport",
   { "foreign.license_no" => "self.license_no" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
@@ -154,8 +176,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07010 @ 2014-12-31 17:02:07
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:9tHvc8ljUmrPd/aKSZAeKA
+# Created by DBIx::Class::Schema::Loader v0.07010 @ 2015-01-30 20:03:01
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:buOTQ64JOcGb/HU0TI3elg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

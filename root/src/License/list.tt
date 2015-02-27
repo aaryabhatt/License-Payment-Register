@@ -2,8 +2,8 @@
     <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">All Licenses</div>
-
 [% PROCESS src/xpagination.tt %]
+
 <table class="table table-striped" >
 <thead>
         <tr> <th>License ID</th>   <th>License No.</th> <th> Category</th><th> License Type</th> <th>Validity Start</th> <th>Validity End</th>
@@ -11,13 +11,12 @@
         </tr>
 </thead>
 <tbody>
-
 [% FOREACH a = licenses %]
         <tr>  <td>[% a.licenseid %]</td>  <td>[% a.license_no %]</td><td>[% a.categoryname %]</td> <td>[% a.license_type %]</td> <td>[% a.validity_start %]</td> <td>[% a.validity_end %]</td>  <td>[% a.entry_date %]</td>
                                        <td> <a href="[% c.uri_for('/license/modify/')  %][% a.license_no | uri | url | trim %]">Modify</a> </td>
         </tr>
-[% END %]
 
+[% END %]
 
 </tbody>
 </table>
